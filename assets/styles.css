@@ -1,0 +1,356 @@
+:root{
+    --bg-color-black: hsl(0, 0%, 0%);
+    --bg-color-white: hsl(0, 0%, 100%);
+    --bg-color-dark-grey: hsl(0, 0%, 63%);
+    --bg-color-very: hsl(0, 0%, 27%);
+
+    --text-color-black: hsl(0, 0%, 0%);
+    --text-color-white: hsl(0, 0%, 100%);
+    --text-color-dark-grey: hsl(0, 0%, 63%);
+    --ft-size: 16px;
+    --ft-family: 'League Spartan', sans-serif;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: var(--ft-family);
+    width: 100%;
+    min-height: 100vh;
+    min-height: 100dvh;
+    font-size: var(--ft-size);
+}
+
+.container__content{
+    display: grid;
+    height: auto;
+    grid-template-columns: minmax(500px, 1fr) repeat(3, 1fr);
+    grid-template-rows: repeat(2, auto);
+}
+
+.container__header {
+    position: relative;
+    grid-column: span 2;
+}
+
+
+.container__menu {
+    position: absolute;
+    top: 45px;
+    left: 120px;
+    display: flex;
+    align-items: center;
+    padding: 25px 45px;
+    gap: 30px;
+    margin-left: 15px;
+    z-index: 100;
+}
+
+.open__btn{
+    display: none;
+    background: none;
+    border: none;
+    padding: 1em;
+    cursor: pointer;
+    z-index: 100;
+}
+
+.close__btn{
+    display: none;
+    background: none;
+    border: none;
+    padding: 1.7em;
+    cursor: pointer;
+    z-index: 101;
+}
+
+.container__logo {
+    position: absolute;
+    top: 70px;
+    left: 45px;
+    display: flex;
+    width: 100px;
+    height: auto;
+    align-items: center;
+    justify-content: center;
+    z-index: 100;
+}
+
+.menu__items {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+.menu__items li a {
+    position: relative;
+    text-decoration: none;
+    color: var(--text-color-white);
+    font-weight: 600;
+}
+
+.menu__items a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 100%;
+    height: 2px; 
+    background-color: white;
+    transform: scaleX(0);
+    transform-origin: center;
+    transition: transform 0.3s ease-out;
+}
+
+
+.menu__items a:hover::after {
+    transform: scaleX(1);
+}
+
+.container__slider{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    z-index: 100;
+}
+
+.img__hero{
+    width: 100%;
+    height: 100%;
+}
+
+.container__main{
+    display: grid;
+    place-content: center;
+    grid-column: span 2;
+    position: relative;
+    max-width: 100%;
+    height: 100%;
+}
+
+.main__content {
+    width: 100%;
+    max-width: 461px; 
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: min(20px, 20%);
+    gap: 20px;
+    margin-bottom: 40px;
+}
+
+.main__content h1{
+    font-weight: 600;
+    font-size: clamp(1.95rem, 4vw, 3.125rem);
+}
+
+.main__content p{
+    color: var(--text-color-dark-grey);
+    line-height: 1.5;
+    font-size: clamp( 1rem, 1.5vw, 1rem);
+}
+
+.container__shopping{
+    display: flex;
+    gap: 20px;
+    transition: all ease-in-out 0.3s;
+}
+
+.container__shopping a{
+    text-decoration: none;
+    color: var(--text-color-black);
+    text-transform: uppercase;
+    letter-spacing: 10px;
+}
+
+.container__shopping:hover{
+    color: var(--bg-color-dark-grey);
+    cursor: pointer;
+    filter: brightness(0) saturate(100%) invert(67%) sepia(0%) saturate(0%) hue-rotate(0deg);
+}
+
+.container__buttons{
+    position: absolute;
+    display: flex;
+    width: 158px;
+    height: 80px;
+    bottom: 0;
+    z-index: 101;
+}
+
+.container__buttons button{
+    width: 100%;
+    background-color: var(--bg-color-black);
+    border: none;
+    cursor: pointer;
+    transition: all ease-in 0.3s;
+}
+
+.container__buttons button:hover{
+    background-color: var(--bg-color-very);
+}
+
+.inner__grid{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr) 1.8fr;
+}
+
+.container__footer{
+    grid-column: span 4;
+}
+
+.container__footer img{
+    height: 100%;
+}
+
+.img__light{
+    grid-column: 4;
+    width: 100%;
+    height: 100%;
+}
+
+.img__dark{
+    width: 420px;
+    min-width: 100%;
+    grid-column: 1;
+}
+
+.footer__about{
+    grid-column: span 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 40px;
+    gap: 20px;
+}
+
+.footer__about h3{
+    color: var(--text-color-black);
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    font-size: clamp(1rem, calc(7vw + 1rem), 1.125rem);
+}
+
+.footer__about p{
+    color: var(--text-color-dark-grey);
+    line-height: 1.2;
+    font-size: 15.5px;
+    font-size: clamp(0.95rem, calc(7vw + 1rem), 0.99rem);
+}
+
+
+.overlay {
+    background-color: rgb(0, 0, 0, 0.5);
+    position: fixed;
+    inset: 0;
+    z-index: 50;
+    display: none;
+}
+
+@media (max-width: 1331px) {
+
+    .container__content {
+        width: 100%;
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-rows: auto;
+    }
+  
+    .container__main{
+        grid-row: 2;
+    }
+
+    .container__buttons{
+        width: 100px;
+        height: 60px;
+        top: -60px;
+        right: 0;
+    }
+
+    .inner__grid{
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-rows: auto;
+    }
+
+    .container__footer{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .container__footer img{
+        width: 100%;
+        height: 100%;
+    }
+
+    .main__content{
+        width: 380px;
+        margin-top: 20px;
+        padding: 40px;
+    }
+
+}
+
+@media (max-width: 768px) {
+    .open__btn,
+    .close__btn{
+        display: block;
+    }
+
+    .container__menu{
+        position: fixed;
+        top: -100%;
+        left: 0;
+        width: 100%;
+        height: 110px;
+        background-color: var(--bg-color-white);
+        transition: top 300ms ease-out;
+        padding: 0;
+        margin-left: 0px;
+   }
+
+   .container__menu.show{
+        top: 0;
+   }
+
+   .container__menu.show ~ .overlay{
+        display: block;
+   }
+
+   .menu__items{
+        width: 100%;
+        align-items: center;
+        gap: 0px;
+        padding: 0;
+        z-index: 100;
+   }
+   
+   .menu__items li{
+        width: 100%;
+   }
+
+   .menu__items li a{
+        color: var(--text-color-black);
+        justify-content: center;
+        padding: 0;
+   }
+
+   .container__logo{
+        width: 100%;
+        left: 0;
+        top: 50px;
+        align-items: center;
+   }
+
+   .container__logo button{
+        position: absolute;
+        left: 10px;
+   }
+
+    .main__content {
+        width: 100%;
+        max-width: 100%;
+    }
+}

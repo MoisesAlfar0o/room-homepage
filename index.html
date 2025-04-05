@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Room homepage</title>
+
+  <link rel="stylesheet" href="./assets/styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hamburgers/1.1.3/hamburgers.min.css">
+
+  <!-- SwiperJS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+</head>
+<body>
+  <section class="container__content">
+    <header class="container__header">
+      <div class="container__logo">
+        <button class="open__btn" id="open-menu" onclick="openMenu()" aria-label="Open menu" aria-expanded="false" aria-controls="nav">
+          <svg xmlns="http://www.w3.org/2000/svg" height="40px" viewBox="0 -960 960 960" width="40px" fill="#c9c9c9"><path d="M165.13-254.62q-10.68 0-17.9-7.26-7.23-7.26-7.23-18t7.23-17.86q7.22-7.13 17.9-7.13h629.74q10.68 0 17.9 7.26 7.23 7.26 7.23 18t-7.23 17.87q-7.22 7.12-17.9 7.12H165.13Zm0-200.25q-10.68 0-17.9-7.27-7.23-7.26-7.23-17.99 0-10.74 7.23-17.87 7.22-7.13 17.9-7.13h629.74q10.68 0 17.9 7.27 7.23 7.26 7.23 17.99 0 10.74-7.23 17.87-7.22 7.13-17.9 7.13H165.13Zm0-200.26q-10.68 0-17.9-7.26-7.23-7.26-7.23-18t7.23-17.87q7.22-7.12 17.9-7.12h629.74q10.68 0 17.9 7.26 7.23 7.26 7.23 18t-7.23 17.86q-7.22 7.13-17.9 7.13H165.13Z"/></svg>
+        </button>
+        <img src="./images/logo.svg" alt="Logo Room">
+      </div>
+      <nav class="container__menu" id="nav">
+        <button class="close__btn" id="close-menu" onclick="closeMenu()" aria-label="Close menu">
+            <svg xmlns="http://www.w3.org/2000/svg" height="40px" viewBox="0 -960 960 960" width="40px" fill="#c9c9c9"><path d="m480-444.62-209.69 209.7q-7.23 7.23-17.5 7.42-10.27.19-17.89-7.42-7.61-7.62-7.61-17.7 0-10.07 7.61-17.69L444.62-480l-209.7-209.69q-7.23-7.23-7.42-17.5-.19-10.27 7.42-17.89 7.62-7.61 17.7-7.61 10.07 0 17.69 7.61L480-515.38l209.69-209.7q7.23-7.23 17.5-7.42 10.27-.19 17.89 7.42 7.61 7.62 7.61 17.7 0 10.07-7.61 17.69L515.38-480l209.7 209.69q7.23 7.23 7.42 17.5.19 10.27-7.42 17.89-7.62 7.61-17.7 7.61-10.07 0-17.69-7.61L480-444.62Z"/></svg>
+        </button>
+        <ul class="menu__items">
+          <li><a href="#">home</a></li>
+          <li><a href="#">shop</a></li>
+          <li><a href="#">about</a></li>
+          <li><a href="#">contact</a></li>
+        </ul>
+      </nav>
+      <div class="overlay" onclick="closeMenu()" aria-hidden="true"></div> 
+      <div class="swiper container__slider" aria-label="Home decor gallery">
+        <div class="swiper-wrapper" id="swiper-wrapper" role="list"></div>
+      </div>
+    </header>
+    <main class="container__main">
+      <div class="main__content">
+          <h1 id="title"></h1>
+          <p id="text"></p>
+        <div class="container__shopping">
+          <a href="#">Shop now</a>
+          <img src="./images/icon-arrow.svg" alt="Arrow">
+        </div>
+      </div>
+      <div class="container__buttons">
+        <button id="prev-btn"><img src="./images/icon-angle-left.svg" alt="Prev slider arrow"></button>
+        <button id="next-btn"><img src="./images/icon-angle-right.svg" alt="Next slider arrow"></button>
+      </div>
+    </main>
+    <footer class="container__footer inner__grid">
+      <img class="img__dark" src="./images/image-about-dark.jpg" alt="Img about dark">
+      <div class="footer__about">
+        <h3>About our furniture</h3>
+        <p>
+          Our multifunctional collection blends design and function to suit your individual taste.
+          Make each room unique, or pick a cohesive theme that best express your interests and what
+          inspires you. Find the furniture pieces you need, from traditional to contemporary styles
+          or anything in between. Product specialists are available to help you create your dream space.
+        </p>
+      </div>
+      <img class="img__light" src="./images/image-about-light.jpg" alt="Img aboyt light">
+    </footer>
+  </section>
+
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>   
+  <script src="./assets/app.js"></script>
+</body>
+</html>
