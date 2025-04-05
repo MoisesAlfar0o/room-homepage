@@ -43,13 +43,15 @@ data.forEach((item) => {
     const slide = document.createElement('div');
     slide.className = 'swiper-slide';
     
-    slide.innerHTML = `
+    const renderSlider = `
       <picture>
         <source media="(max-width: 768px)" srcset="${item.imgMobile}">
         <source media="(min-width: 769px)" srcset="${item.imgLarge}">
         <img src="${item.imgLarge}" class="slide-image img__hero" alt="Interior decoration gallery">
       </picture>
     `;
+    
+    slide.innerHTML = renderSlider;
     
     swiperWrapper.appendChild(slide);
   });
